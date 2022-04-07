@@ -1,0 +1,50 @@
+# Copyright (C) 2017 NVIDIA Corporation.  All rights reserved.
+# Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
+log_iter: 10 # How often do you want to log the training stats
+
+# optimization options
+max_epochs: 500
+batch_size: 2 # batch size
+ngpus: 1
+momentum: 0.9 # momentum
+weight_decay: 0.05 # weight decay
+betas: [0.9, 0.999] # Adam parameter
+init: kaiming # initialization [gaussian/kaiming/xavier/orthogonal]
+lr: 0.001 # initial learning rate
+lr_policy: step # learning rate scheduler
+gamma: 0.5 # how much to decay learning rate
+step_size: 30 # how often to decay learning rate
+
+# model options
+trainer: Trainer
+model:
+  generator:
+    landmark_dim: 24
+    audio_dim: 44
+    attitude_dim: 8
+    dynam_3dmm_dim: 70
+    fusion:
+      lstm_input_dim: 192
+      activation: Tanh
+      fusion_type: lstm
+      lstm:
+        num_layers: 2
+        bias: False
+        dropout: 0.1
+        hidden_size: 96
+
+# data options
+num_workers: 4
+root: ./data
+temporal_size: 8
+
+loss_weights:
+  loss_angle: 1
+  loss_angle_spiky: 1
+  loss_exp: 1
+  loss_exp_spiky: 0.001
+  loss_trans: 1
+  loss_trans_spiky: 1
+  loss_crop: 1
+  loss_crop_spiky: 1
