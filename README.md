@@ -299,3 +299,15 @@ python compute_lipsync.py --pd_video_folder {} --gt_audio_folder {} --anno_file 
 ```bash
 python compute_lmd.py --gt_video_folder {} --pd_video_folder {} --anno_file {*.csv}
 ```
+
+## Citation
+If you think this work is helpful for you, please give it a star and citation :)
+
+```bibtex
+@article{zhou2021responsive,
+  title={Responsive Listening Head Generation: A Benchmark Dataset and Baseline},
+  author={Zhou, Mohan and Bai, Yalong and Zhang, Wei and Zhao, Tiejun and Mei, Tao},
+  journal={arXiv preprint arXiv:2112.13548},
+  year={2021}
+}
+```
