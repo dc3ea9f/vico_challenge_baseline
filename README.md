@@ -234,7 +234,7 @@ Our code is composed by five groups:
 
 ### Example Results
 
-TBD.
+[Video Link](https://vico-challenge.github.io/#generations)
 
 ## Evaluation
 
