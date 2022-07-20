@@ -1,8 +1,12 @@
 # ViCo Challenge Baseline
 
-[[Homepage]](http://vico-challenge.github.io/)
+[[Homepage]](https://project.mhzhou.com/vico)
+[[Paper]](https://arxiv.org/abs/2112.13548)
+[[Code]](https://github.com/dc3ea9f/vico_challenge_baseline)
+[[Full Dataset]](https://1drv.ms/u/s!Ag220j2nXkVsxS0IOdIKNs_ZTOX-?e=3GQ0yG)
+[[Challenge]](https://vico-challenge.github.io/)
 
-This repository provides a baseline method for [ViCo challenge](https://vico-challenge.github.io/), including vivid talking head video generation and responsive listening head video generation.
+This repository provides a baseline method for both the [ViCo challenge](https://vico-challenge.github.io/) and [ViCo Project](https://project.mhzhou.com/vico), including vivid talking head video generation and responsive listening head video generation.
 
 Our code is composed by five groups:
 
@@ -15,7 +19,12 @@ Our code is composed by five groups:
   - code for lip sync evaluation is mainly from [joonson/syncnet_python](https://github.com/joonson/syncnet_python)
 
 
+## For ViCo Project
+This repo is created largerly for the [challenge](https://vico-challenge.github.io/), while the [full dataset](https://1drv.ms/u/s!Ag220j2nXkVsxS0IOdIKNs_ZTOX-?e=3GQ0yG) released in [ViCo Project](https://project.mhzhou.com/vico) is slightly different from the challenge data. You can use the [script](preprocess/convert.py) to convert:
 
+```bash
+python convert.py --anno_file path_to_anno_file --video_folder path_to_videos --audio_folder path_to_audios --target_folder path_to_target_dataset
+```
 
 ## Train Baseline
 
