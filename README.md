@@ -18,6 +18,7 @@ Our code is composed by five groups:
   - code for CSIM is mainly from [deepinsight/insightface](https://github.com/deepinsight/insightface)
   - code for lip sync evaluation is mainly from [joonson/syncnet_python](https://github.com/joonson/syncnet_python)
 
+For end-to-end inference, this [repo](https://github.com/dc3ea9f/face_utils) may useful.
 
 ## For ViCo Project
 This repo is created largerly for the [challenge](https://vico-challenge.github.io/), while the [full dataset](https://1drv.ms/u/s!Ag220j2nXkVsxS0IOdIKNs_ZTOX-?e=3GQ0yG) released in [ViCo Project](https://project.mhzhou.com/vico) is slightly different from the challenge data. You can use the [script](preprocess/convert.py) to convert:
