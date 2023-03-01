@@ -39,11 +39,11 @@ data = data.assign(**{
 })
 
 # get sum of rank across all metrics
-data = data.assign(Rank=data[[k + '_Rank' for k in metrics.keys()]].sum(axis=1))
+data = data.assign(Score=data[[k + '_Rank' for k in metrics.keys()]].sum(axis=1))
 
 # remove columns with `_Rank`
 data = data[[c for c in data.columns if '_Rank' not in c]]
 
 # sort by rank and print
-data = data.sort_values('Rank')
+data = data.sort_values('Score')
 print(data)
