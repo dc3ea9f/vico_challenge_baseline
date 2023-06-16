@@ -8,7 +8,7 @@
 
 This repository provides a baseline method for both the [ViCo challenge](https://vico-challenge.github.io/) and [ViCo Project](https://project.mhzhou.com/vico), including vivid talking head video generation and responsive listening head video generation.
 
-Our code is composed by five groups:
+Our code is composed of five groups:
 
 - `Deep3DFaceRecon_pytorch`: use for extract 3dmm coefficients. Mainly from [sicxu/Deep3DFaceRecon](https://github.com/sicxu/Deep3DFaceRecon_pytorch), modified following [RenYurui/PIRender](https://github.com/RenYurui/PIRender)
 - `preprocess`: scripts for making dataset compatible with our method
@@ -17,11 +17,12 @@ Our code is composed by five groups:
 - `evaluation`: quantitative analysis for generations, including SSIM, CPBD, PSNR, FID, CSIM, etc.
   - code for CSIM is mainly from [deepinsight/insightface](https://github.com/deepinsight/insightface)
   - code for lip sync evaluation is mainly from [joonson/syncnet_python](https://github.com/joonson/syncnet_python)
+  - in [Challenge 2023](https://vico.solutions/challenge/2023), we use [cleardusk/3DDFA_V2](https://github.com/cleardusk/3DDFA_V2) to extract landmarks for LipLMD and 3DMM reconstruction.
 
-For end-to-end inference, this [repo](https://github.com/dc3ea9f/face_utils) may useful.
+For end-to-end inference, this [repo](https://github.com/dc3ea9f/face_utils) may be useful.
 
 ## For ViCo Project
-This repo is created largerly for the [challenge](https://vico-challenge.github.io/), while the [full dataset](https://1drv.ms/u/s!Ag220j2nXkVsxS0IOdIKNs_ZTOX-?e=3GQ0yG) released in [ViCo Project](https://project.mhzhou.com/vico) is slightly different from the challenge data. You can use the [script](preprocess/convert.py) to convert:
+This repo is created largely for the [challenge](https://vico-challenge.github.io/), while the [full dataset](https://1drv.ms/u/s!Ag220j2nXkVsxS0IOdIKNs_ZTOX-?e=3GQ0yG) released in [ViCo Project](https://project.mhzhou.com/vico) is slightly different from the challenge data. You can use the [script](preprocess/convert.py) to convert:
 
 ```bash
 python convert.py --anno_file path_to_anno_file --video_folder path_to_videos --audio_folder path_to_audios --target_folder path_to_target_dataset
