@@ -6,7 +6,7 @@ from tqdm import tqdm
 import cv2
 import numpy as np
 import torch
-from sklearn.metrics.pairwise import cosine_similarity
+import torch.nn.functional as F
 
 from backbones import get_model
 
@@ -84,6 +84,6 @@ if __name__ == "__main__":
 
         gt_feats.append(gt_feat.numpy())
         pd_feats.append(pd_feat.numpy())
-    gt_feats = np.concatenate(gt_feats, 0)
-    pd_feats = np.concatenate(pd_feats, 0)
-    print('cosine similarity:', cosine_similarity(gt_feats, pd_feats).mean())
+    gt_feats = torch.from_numpy(np.concatenate(gt_feats, 0))
+    pd_feats = torch.from_numpy(np.concatenate(pd_feats, 0))
+    print('cosine similarity:', F.cosine_similarity(gt_feats, pd_feats).mean().item())
